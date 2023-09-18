@@ -11,9 +11,13 @@ public class AppMain {
         for (int a = 0; a < 50; a++) {
             String str = "";
             for (int i = 0; i < 8; i++) {
-                str += "               ";
+                if (i == 0) {
+                    str += "               ";
+                } else {
+                    str += "               |";
+                }
                 for (int k = 0; k < i; k++) {
-                    str += " ";
+                    if (k != 0) str += " ";
                 }
                 str += "4\n";
             }
@@ -36,7 +40,11 @@ public class AppMain {
             for (int i = 8; i > 0; i--) {
                 str += "              ";
                 for (int k = 0; k < i; k++) {
-                    str += " ";
+                    if (i != 1 && k == 1) {
+                        str += "|";
+                    } else {
+                        str += " ";
+                    }
                 }
                 str += "4\n";
             }
