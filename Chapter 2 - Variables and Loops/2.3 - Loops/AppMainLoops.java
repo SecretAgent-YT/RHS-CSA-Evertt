@@ -1,5 +1,6 @@
-public class AppMain {
+public class AppMainLoops {
     public static void main(String[] args) {
+        System.out.println("yes");
         loop1();
         loop2();
         loop3();
@@ -12,8 +13,8 @@ public class AppMain {
         /* Update the print code to output the following sequence...
          *      2 7 12 17 22
          */
-        for(int i = 0; i < 5; i++) {
-	        System.out.print( i + " " );
+        for(int i = 2; i <= 22; i += 5) {
+	        System.out.print(i + " ");
         }
         System.out.println();
     }
@@ -22,8 +23,8 @@ public class AppMain {
         /* Update the print code to output the following sequence...
          *      4 7 10 13 16
          */
-        for(int i = 0; i < 5; i++) {
-	        System.out.print( i + " " );
+        for(int i = 4; i <= 16; i += 3) {
+	        System.out.print(i + " ");
         }
         System.out.println();
     }
@@ -34,8 +35,8 @@ public class AppMain {
          * 
          * hint: you'll need to update the end condition.
          */
-        for(int i = 0; i < 2; i++) {
-	        System.out.print( i + " " );
+        for(int i = 6; i <= 21; i += 3) {
+	        System.out.print(i + " ");
         }
         System.out.println();
     }
@@ -44,8 +45,8 @@ public class AppMain {
         /* Update the code to output the following sequence...
          *      -15 -7 1 9 17 25
          */
-        for(int i = 0; i < 2; i++) {
-	        System.out.print( i + " " );
+        for(int i = -15; i <= 25; i += 8) {
+	        System.out.print(i + " ");
         }
         System.out.println();
     }
@@ -54,8 +55,8 @@ public class AppMain {
         /* Update the code to output the following sequence...
          *      10 9 8 7 6 5
          */
-        for(int i = 0; i < 2; i++) {
-	        System.out.print( i + " " );
+        for(int i = 10; i >= 5; i--) {
+	        System.out.print(i + " ");
         }
         System.out.println();
     }
@@ -66,8 +67,8 @@ public class AppMain {
          * 
          * hint: you can modify all three parameters to the loop.
          */
-        for(int i = 4; i < 10; i += 2) {
-	        System.out.print( i + " " );
+        for(int i = 6; i <= 10; i += 2) {
+	        System.out.print(i + " ");
         }
         System.out.println();
     }

@@ -19,24 +19,34 @@ public class AppMain {
                 for (int k = 0; k < i; k++) {
                     if (k != 0) str += " ";
                 }
-                str += "4\n";
+                str += "4";
+                for (int h = 0; h < 48 - i; h++) {
+                    str += " ";
+                }
+                str += "|\n";
             }
+            String string;
             if (a < 9) {
-                String string = "                  -------------->\n";
+                string = "                  -------------->";
                 for (int i = 0; i < a; i++) {
                     string = string.replaceFirst(" ", "");
                 }
-                str += string;
                 delay = 100;
             } else {
-                String string = "         ";
+                string = "         ";
                 for (int i = 0; i < a - 9; i++) {
                     string += " ";
                 }
-                string += "-------------->\n";
-                str += string;
+                string += "-------------->";
                 delay = 10;
             }
+            int index = string.indexOf(">");
+            int count = 49 - index;
+            for (int i = 0; i < count; i++) {
+                string += " ";
+            }
+            string += "|\n";
+            str += string;
             for (int i = 8; i > 0; i--) {
                 str += "              ";
                 for (int k = 0; k < i; k++) {
@@ -46,7 +56,11 @@ public class AppMain {
                         str += " ";
                     }
                 }
-                str += "4\n";
+                str += "4";
+                for (int h = 0; h < 49 - i; h++) {
+                    str += " ";
+                }
+                str += "|\n";
             }
             System.out.println(str);
             if (a <= 48) {
