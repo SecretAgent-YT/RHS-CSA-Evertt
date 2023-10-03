@@ -64,4 +64,9 @@ public class Ball {
             updateSubStep(deltaTime / simSubSteps, sim, paddle);
         }
     }
+
+    public Vec2 getPos() {
+        return pos;
+    }
+
 }

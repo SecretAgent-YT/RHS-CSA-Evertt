@@ -2,6 +2,9 @@ import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.PointerInfo;
 
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+
 public class Paddle {
     private final double PADDLE_HEIGHT = 0.15;
 
@@ -42,5 +45,17 @@ public class Paddle {
             posX = Math.min(Math.max(posX + paddleDelta, halfWidth), Simulation.GRID_WIDTH - halfWidth);
         }
         prevMousePos = mousePos;
+
     }
+
+    public void keyPressed(KeyEvent e) {
+         if (e.getEventType() == KeyEvent.KEY_PRESSED) {
+            if (e.getCode() == KeyCode.A) {
+                posX--;
+            } else if (e.getCode() == KeyCode.D) {
+                posX++;
+            }
+         }
+    }
+
 }

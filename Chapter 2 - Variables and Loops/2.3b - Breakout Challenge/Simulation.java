@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 /* The simulation class manages the game simulation. 
  *  The game grid size is defined by the constants in this class (GRID_WIDTH, GRID_HEIGHT)
  *  The simulation handles simulating the game, doing physics, input, etc.
@@ -96,6 +98,10 @@ public class Simulation {
                 (pos.y > squareMin.y) && (pos.y <= squareMax.y));
     }
 
+    public Vec2 getBallPos() {
+        return ball.getPos();
+    }
+
     private void update(double deltaTime) {
         ball.update(deltaTime, this, paddle);
         paddle.update(deltaTime);
@@ -110,21 +116,27 @@ public class Simulation {
     public void endFrame() {
         endFrame(150);
     }
-    public void endFrame(int delayMilliSeconds) {  
-        // Delay a for a short time (leave it on the screen)
+
+    public void endFrame(int delayMilliSeconds) { 
         try {
             Thread.sleep(delayMilliSeconds);
-        } 
-        catch (Exception ex) {
+        } catch (Exception ex) {
+
         }
 
-        // Clear the console
-        System.out.print("\033[H\033[2J");  
-        System.out.flush();
 
-        // Simulation update
+        // Clear the console
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         update((double)delayMilliSeconds / 1000);
     } 
+
     public void resetColor() {
         System.out.print("\033[0m");
     }

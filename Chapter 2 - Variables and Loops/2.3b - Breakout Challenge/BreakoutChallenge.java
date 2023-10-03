@@ -26,16 +26,27 @@ public class BreakoutChallenge {
     private static Simulation sim = new Simulation();
 
     public static void main(String[] args) {
-        /* TODO
-         * Replace this with your code. You can create your own methods in this class, but do not modify
-         *  the other files for the main part of this challenge (note that if/when you get to the additional 
-         *  challenge portion, then you can/should modify the other files).
-         * 
-         * Tips...
-         *  - You should probably start by drawing the walls & ceiling.
-         *  - Call 'sim.endFrame()' after drawing the scene. This will update the simulation, then pause & clear the terminal.
-         *  - You should keep looping until the game is complete (check out Simulations's public methods to check for done).
-         *  - Look at the comments at the top of Simulation for more details about the game world & how to use it.
-         */
+        int c = 0;
+        while (sim.isGameActive()) {
+            for (int i = 12; i >= 0; i--) {
+                if (i == 12) System.out.print(" ------------------------");
+                for (int k = 0; k < 24; k++) {
+                    if ((k == 1 || k == 23) && i < 12) System.out.print("|");
+                    if (!sim.isInGridSquare(new Vec2(k, i), k, i)) return;
+                    if (sim.isBallInGridSquare(k, i)) {
+                        System.out.print("0");
+                    } else if (sim.isBrickInGridSquare(k, i)) {
+                        System.out.print("#");
+                    } else if (sim.isPaddleInGridSquare(k, i)) {
+                        System.out.print("_");
+                    } else {
+                        System.out.print(" ");
+                    }
+                }
+                System.out.println();
+            }
+            sim.endFrame();
+            c++;
+        }
     }
 }
