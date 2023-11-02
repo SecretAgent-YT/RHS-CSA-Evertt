@@ -8,6 +8,8 @@ public class Hangman {
 	private static int incorrectCount = 0;
 
 	public static void main(String[] args) {
+		Thing thing = new Thing();
+		thing.doThing();
 		getWord();
 		getGuesses();
 	}
@@ -60,6 +62,10 @@ public class Hangman {
 	// Prints out the game image to the terminal based on how many incorrect guesses have been made.
 	// This game has 7 guesses. Be creative!
 	public static void printHangman() {
+		switch (incorrectCount) {
+			case 1:
+				System.out.println("X");
+		}
 		if (incorrectCount == 1) {
 			System.out.println("Wrong guess, try again");
 			// TODO: write code to print image when the player makes the first wrong guess
