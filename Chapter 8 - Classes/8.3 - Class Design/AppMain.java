@@ -22,4 +22,11 @@ public class AppMain {
     //  Series Sum (5 terms): 25
 
     // Your code goes here...
+
+    public static void main(String[] args) {
+        Series arithmetic = new ArithmeticSeries(1, 3);
+        System.out.println(arithmetic.toString(6));
+        System.out.println(arithmetic.generateSum(5));
+    }
+
 }

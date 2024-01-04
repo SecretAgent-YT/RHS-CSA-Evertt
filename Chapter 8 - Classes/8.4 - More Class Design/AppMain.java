@@ -31,4 +31,13 @@ public class AppMain {
      */
 
      // TODO
+
+    public static void main(String[] args) {
+        CreditCard creditCard = new CreditCard("arvind", 100000);
+        System.out.println(creditCard.makePurchase(90000));
+        System.out.println(creditCard.getDebt());
+        creditCard.makePayment(50000);
+        System.out.println(creditCard.getDebt());
+    }
+
 }
